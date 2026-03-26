@@ -53,6 +53,7 @@
       display: grid;
       place-items: center;
       padding: 12px;
+      overflow: auto;
       background:
         radial-gradient(600px 600px at 100% 0%, rgba(79,125,255,0.14) 0%, transparent 70%),
         radial-gradient(500px 500px at 0% 100%, var(--star-glow) 0%, transparent 70%),
@@ -63,7 +64,7 @@
     }
 
     .phone {
-      --phone-w: min(430px, calc(100vw - 24px), calc((100vh - 24px) * 430 / 920));
+      --phone-w: min(430px, calc(100vw - 24px));
       width: var(--phone-w);
       height: calc(var(--phone-w) * 920 / 430);
       border-radius: 40px;
