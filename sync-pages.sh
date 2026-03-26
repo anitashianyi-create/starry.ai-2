@@ -18,6 +18,12 @@ fi
 
 msg="${*:-sync: $(date '+%Y-%m-%d %H:%M:%S')}"
 git commit -m "$msg"
-git push origin main
+
+if [[ -n "${GITHUB_TOKEN:-}" ]]; then
+  b64="$(printf 'x-access-token:%s' "$GITHUB_TOKEN" | base64)"
+  GIT_TERMINAL_PROMPT=0 git -c http.https://github.com/.extraheader="AUTHORIZATION: basic $b64" push origin main
+else
+  git push origin main
+fi
 
 echo "Synced to GitHub Pages source: main"
