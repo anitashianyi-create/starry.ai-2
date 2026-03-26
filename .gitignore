@@ -1,1 +1,11 @@
 .DS_Store
+
+# Ignore unused local demo videos by default
+kos/*.mp4
+
+# Keep only the videos currently referenced by the page
+!kos/公司走廊.mp4
+!kos/攀岩.mp4
+!kos/滑雪.mp4
+!kos/脱口秀场景mp4.mp4
+!kos/街头采访.mp4
